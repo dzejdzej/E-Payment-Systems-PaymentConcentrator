@@ -19,6 +19,8 @@ public class PCNewPaymentDTO {
     private Date merchantTimestamp;
     
 	private String errorURL;
+	private String failedURL;
+	private String successURL;
 	
 	public PCNewPaymentDTO() {
 	
@@ -64,6 +66,22 @@ public class PCNewPaymentDTO {
 		this.merchantTimestamp = merchantTimestamp;
 	}
 
+	public String getFailedURL() {
+		return failedURL;
+	}
+
+	public void setFailedURL(String failedURL) {
+		this.failedURL = failedURL;
+	}
+
+	public String getSuccessURL() {
+		return successURL;
+	}
+
+	public void setSuccessURL(String successURL) {
+		this.successURL = successURL;
+	}
+
 	public String getErrorURL() {
 		return errorURL;
 	}
@@ -71,7 +89,4 @@ public class PCNewPaymentDTO {
 	public void setErrorURL(String errorURL) {
 		this.errorURL = errorURL;
 	}
-	
-	
-
 }
