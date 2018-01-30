@@ -1,11 +1,14 @@
 package paymentConcentrator.rest;
 
+import paymentConcentrator.plugin.VrstaPlacanja;
+
 public class ResponseDTO {
 
 	private Boolean success; 
 	private String errorInfo; 
 	private String reason; 
-	private int transactionIdMerchant; 
+	private int transactionIdMerchant;
+	
 	
 	public ResponseDTO() {
 		

@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.9.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -23,6 +23,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+	
+	<repositories>
+		<repository>
+			<id>local-maven-repo</id>
+			<url>file:///${project.basedir}/lib</url>
+		</repository>
+	</repositories>
+
 
 	<dependencies>
 		<dependency>
@@ -34,6 +42,46 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.3</version>
+		</dependency>
+
+		<dependency>
+		<groupId>com.example</groupId>
+		<artifactId>plugin-core</artifactId>
+		<version>0.0.1</version>
+<!-- 		<scope>system</scope> -->
+<!-- 		<systemPath>${project.basedir}/lib/plugin-core-0.0.1-SNAPSHOT1.jar</systemPath> -->
+		</dependency>
+
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>paypal-strategy</artifactId>
+			<version>0.0.1</version>
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/paypal-strategy-0.0.1-SNAPSHOT1.jar</systemPath> -->
+		</dependency>
+
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>acquirer-strategy</artifactId>
+			<version>0.0.1</version>
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/acquirer-strategy-0.0.1-SNAPSHOT2.jar</systemPath> -->
+		</dependency>
+		 <dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.8</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -42,8 +90,21 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<!-- or whatever version you use -->
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
 		</plugins>
+
 	</build>
+
 
 
 </project>

@@ -5,6 +5,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import paymentConcentrator.plugin.VrstaPlacanja;
+
 public class PCNewPaymentDTO {
 	
 	private String merchantId;
@@ -21,6 +23,7 @@ public class PCNewPaymentDTO {
 	private String errorURL;
 	private String failedURL;
 	private String successURL;
+	private VrstaPlacanja vrstaPlacanja; 
 	
 	public PCNewPaymentDTO() {
 	
@@ -88,5 +91,13 @@ public class PCNewPaymentDTO {
 
 	public void setErrorURL(String errorURL) {
 		this.errorURL = errorURL;
+	}
+
+	public VrstaPlacanja getVrstaPlacanja() {
+		return vrstaPlacanja;
+	}
+
+	public void setVrstaPlacanja(VrstaPlacanja vrstaPlacanja) {
+		this.vrstaPlacanja = vrstaPlacanja;
 	}
 }
